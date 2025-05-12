@@ -88,16 +88,23 @@
             }// 課題4-1. ここにコード書く
             // 商品オブジェクトの生成
 
-            // 課題4-2. ここにコードを書く
+            for (let i = 0; i < item_list.length; i++) {
+                const item = item_list[i];
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td id="stock-${item.id}">${item.stock}</td>
+                    <td><button id="button${item.id}">購入</button></td>`;
+                itemArea.appendChild(row);
+            }// 課題4-2. ここにコードを書く
             // 商品表の作成
 
             // クリックイベント時の購入処理の設定
             for (let i=0; i<item_list.length; i++) {
-                // 課題4-3. ここにコードを書く
-                // 課題4-1, 4-2のコードが完成したら、以下のコメントを外す
-                //document.getElementById("button"+item_list[i].id).onclick = () => {
-                //    item_list[i].buyItem();
-                //}
+                document.getElementById("button"+item_list[i].id).onclick = () => {
+                    item_list[i].buyItem();
+                }
             }
             Item.showItemList(item_list);
 
