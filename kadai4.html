@@ -59,12 +59,9 @@
                 buyItem() {          
                     if (this.stock >= 1) { 
                         console.log("商品番号: "+this.id+", 商品名: "+this.name+"を購入します。");
-                        if (this.stock <= 0) {
-                            console.log("在庫がありません。");
-                        } else {
                             this.stock--;
                             console.log("残りは"+this.stock+"個です。")
-                        }// 課題4-2. ここにコードを書く
+                        // 課題4-2. ここにコードを書く
                         // 購入による商品の在庫削減処理
                         
                         const stockElement = document.getElementById("stock-"+this.id);
